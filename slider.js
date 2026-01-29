@@ -11,20 +11,21 @@ function renderText() {
 arrowLeft.addEventListener("click", function () {
   i--;
   if (i === -1) {
-    i--;
-    i = 2;
-    renderText();
+    arrowLeft.disabled = true;
+    return;
   } else {
     renderText();
+    arrowRight.disabled = false;
   }
 });
 
 arrowRight.addEventListener("click", function () {
   i++;
   if (i === 3) {
-    i = 0;
-    renderText();
+    arrowRight.disabled = true;
+    return;
   } else {
     renderText();
+    arrowLeft.disabled = false;
   }
 });
